@@ -8,5 +8,4 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 ## Check if a server is up and running
 
-[SSH](./server-up-running/README.md)
-
+[Server Up Running](./server-up-running/README.md)
