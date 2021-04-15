@@ -9,3 +9,11 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 ## Check if a server is up and running
 
 [Server Up Running](./server-up-running/README.md)
+
+
+
+
+### Documentation
+
+[Syslog and Klog](https://www.youtube.com/watch?v=LKikVNSRxqM)
+
