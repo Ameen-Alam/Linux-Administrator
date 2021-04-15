@@ -30,5 +30,6 @@ https://unix.stackexchange.com/questions/35851/whats-the-difference-of-dmesg-out
 2. How To Solve “XFS: Filesystem has duplicate UUID – can’t mount”
 
 $ sudo mount -o rw,nouuid /dev/sda3  /mnt
+
 $ sudo xfs_admin -U generate /dev/sda3
 
