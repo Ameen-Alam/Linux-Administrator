@@ -26,3 +26,9 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
  dmesg prints the contents of the ring buffer. This information is also sent in real time to syslogd or klogd, when they are running, and ends up in /var/log/messages; when dmesg is most useful is in capturing boot-time messages from before syslogd and/or klogd started, so that they will be properly logged.
 
 https://unix.stackexchange.com/questions/35851/whats-the-difference-of-dmesg-output-and-var-log-messages
+
+2. How To Solve “XFS: Filesystem has duplicate UUID – can’t mount”
+
+$ sudo mount -o rw,nouuid /dev/sda3  /mnt
+$ sudo xfs_admin -U generate /dev/sda3
+
