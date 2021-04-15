@@ -17,3 +17,11 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 [Syslog and Klog](https://annvix.com/syslog_and_klog#:~:text=syslogd%20is%20a%20system%20logging,via%20the%20%2Fetc%2Fsyslog)
 
+-------------------------
+
+#### Questions
+
+1. What's the difference of dmesg output and /var/log/messages ?
+
+ dmesg prints the contents of the ring buffer. This information is also sent in real time to syslogd or klogd, when they are running, and ends up in /var/log/messages; when dmesg is most useful is in capturing boot-time messages from before syslogd and/or klogd started, so that they will be properly logged.
+
