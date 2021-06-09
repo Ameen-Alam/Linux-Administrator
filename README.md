@@ -2,48 +2,66 @@
 
 Linux is a tried-and-true, open-source operating system released in 1991 for computers, but its use has expanded to underpin systems for cars, phones, web servers and, more recently, networking gear
 
-## SSH Linux
+<!-- ### SSH Linux
 
 [SSH](./ssh/README.md)
 
-## Check if a server is up and running
+### Check if a server is up and running
 
 [Server Up Running](./server-up-running/README.md)
 
-<<<<<<< HEAD
-## Unix-Linux-Shell-Variables
+### Unix-Linux-Shell-Variables
 
 [Unix-Linux-Shell-Variables](./Unix-Linux-Shell-Variables/README.md)
 
-## Parsing bash script options with getopts
+### Parsing bash script options with getopts
 
 [Parsing-bash-script-options-getopts](./Parsing-bash-script-options-getopts/README.md)
 
-## Cloud-Network-Monitoring
+### Cloud-Network-Monitoring
 
-[Cloud-Network-Monitoring](./Cloud-Network-Monitoring/README.md)
-=======
+[Cloud-Network-Monitoring](./Cloud-Network-Monitoring/README.md) -->
 
+
+
+
+----------------------------------------------------------------
+
+
+### Network-Tools
+
+#### [Traceroute](./Traceroute/README.md)
+Traceroute is a network diagnostic tool used to track in real-time the pathway taken by a packet on an IP network from source to destination, reporting the IP addresses of all the routers it pinged in between. Traceroute also records the time taken for each hop the packet makes during its route to the destination.
+
+
+
+
+
+
+-------------------------
 
 
 ### Documentation
 
 [Syslog and Klog](https://annvix.com/syslog_and_klog#:~:text=syslogd%20is%20a%20system%20logging,via%20the%20%2Fetc%2Fsyslog)
 
+
 -------------------------
 
-#### Questions
+### Questions
 
 1. What's the difference of dmesg output and /var/log/messages ?
 
- dmesg prints the contents of the ring buffer. This information is also sent in real time to syslogd or klogd, when they are running, and ends up in /var/log/messages; when dmesg is most useful is in capturing boot-time messages from before syslogd and/or klogd started, so that they will be properly logged.
+    dmesg prints the contents of the ring buffer. This information is also sent in real time to syslogd or klogd, when they are running, and ends up in /var/log/messages; when dmesg is most useful is in capturing boot-time messages from before syslogd and/or klogd started, so that they will be properly logged.
 
-https://unix.stackexchange.com/questions/35851/whats-the-difference-of-dmesg-output-and-var-log-messages
+    [whats-the-difference-of-dmesg-output-and-var-log-messages](https://unix.stackexchange.com/questions/35851/whats-the-difference-of-dmesg-output-and-var-log-messages)
 
 2. How To Solve “XFS: Filesystem has duplicate UUID – can’t mount”
 
-$ sudo mount -o rw,nouuid /dev/sda3  /mnt
+    $ sudo mount -o rw,nouuid /dev/sda3  /mnt
 
-$ sudo xfs_admin -U generate /dev/sda3
+    $ sudo xfs_admin -U generate /dev/sda3
 
->>>>>>> 8dd16cf9a88f4795b23e8a8240085de2f3434ffa
+
+
+
