@@ -37,7 +37,7 @@ Traceroute is a network diagnostic tool used to track in real-time the pathway t
 
 
 1. #### [NetFlow](./NetFlow/README.md)
-NetFlow is a protocol developed by Cisco Systems to record all IP traffic flows traversing a router or switch that is NetFlow enabled. It generates statistics inside these devices at the interface level and sends this information in UDP-based flow records to an external element called a flow collector—a program running on a server where the traffic statistics can be stored for load balancing analysis.
+    NetFlow is a protocol developed by Cisco Systems to record all IP traffic flows traversing a router or switch that is NetFlow enabled. It generates statistics inside these devices at the interface level and sends this information in UDP-based flow records to an external element called a flow collector—a program running on a server where the traffic statistics can be stored for load balancing analysis.
 
 1. #### [SNMP](https://www.thousandeyes.com/learning/techtorials/snmp-simple-network-management-protocol)
 
@@ -47,9 +47,9 @@ NetFlow is a protocol developed by Cisco Systems to record all IP traffic flows 
 
 1. #### [Spotlight](https://www.quest.com/products/spotlight-on-unix-linux/)
 
-Real-time diagnostics of Unix/Linux problems
+    Real-time diagnostics of Unix/Linux problems
 
-Identify congested areas and swiftly respond to issues before they impact users with this performance and diagnostics resolution tool. Get real-time data flow from Solaris, AIX, HPUX, and Unix/Linux operating systems (including I/O subsystem, cache and kernel information). Create thresholds with an automatically generated set of normal baseline activity for each system, and send alerts about impending problems.
+    Identify congested areas and swiftly respond to issues before they impact users with this performance and diagnostics resolution tool. Get real-time data flow from Solaris, AIX, HPUX, and Unix/Linux operating systems (including I/O subsystem, cache and kernel information). Create thresholds with an automatically generated set of normal baseline activity for each system, and send alerts about impending problems.
 
 
 1. #### [SolarWinds](https://www.troublesnoop.com/what-is-solarwinds-tool/)
