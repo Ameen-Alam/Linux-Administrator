@@ -31,9 +31,9 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 ## Network-Tools
 
 1. #### [Traceroute](./Traceroute/README.md)
-Traceroute is a network diagnostic tool used to track in real-time the pathway taken by a packet on an IP network from source to destination, reporting the IP addresses of all the routers it pinged in between. Traceroute also records the time taken for each hop the packet makes during its route to the destination.
+    Traceroute is a network diagnostic tool used to track in real-time the pathway taken by a packet on an IP network from source to destination, reporting the IP addresses of all the routers it pinged in between. Traceroute also records the time taken for each hop the packet makes during its route to the destination.
 
-[caveats-of-popular-network-tools-traceroute](https://www.thousandeyes.com/blog/caveats-of-popular-network-tools-traceroute/)
+    [caveats-of-popular-network-tools-traceroute](https://www.thousandeyes.com/blog/caveats-of-popular-network-tools-traceroute/)
 
 
 1. #### [NetFlow](./NetFlow/README.md)
