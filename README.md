@@ -54,6 +54,9 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 1. #### [SolarWinds](https://www.troublesnoop.com/what-is-solarwinds-tool/)
 
+
+1. #### [Linux visudo command](https://www.computerhope.com/unix/visudo.htm)
+
 -------------------------
 
 ## Pentesting Tools
