@@ -57,6 +57,10 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 1. #### [Linux visudo command](https://www.computerhope.com/unix/visudo.htm)
 
+
+1. #### [namespaces(7) — Linux manual page](https://man7.org/linux/man-pages/man7/namespaces.7.html)
+
+
 -------------------------
 
 ## Pentesting Tools
