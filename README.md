@@ -61,6 +61,8 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 1. #### [namespaces(7) — Linux manual page](https://man7.org/linux/man-pages/man7/namespaces.7.html)
 
 
+1. #### [CGROUPS](https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt)
+
 -------------------------
 
 ## Pentesting Tools
