@@ -63,6 +63,10 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 1. #### [CGROUPS](https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt)
 
+1. #### [Linux Extended BPF (eBPF) Tracing Tools](https://www.brendangregg.com/ebpf.html)
+
+
+
 -------------------------
 
 ## Pentesting Tools
