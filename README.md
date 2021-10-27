@@ -65,6 +65,7 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 1. #### [Linux Extended BPF (eBPF) Tracing Tools](https://www.brendangregg.com/ebpf.html)
 
+1. #### [YUM COMMAND - CHEAT SHEET](https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf) 
 
 
 -------------------------
