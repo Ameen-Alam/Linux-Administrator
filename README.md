@@ -67,6 +67,7 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 1. #### [YUM COMMAND - CHEAT SHEET](https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf) 
 
+1. #### [VIM Keyboard Shortcuts Cheatsheet](https://www.maketecheasier.com/cheatsheet/vim-keyboard-shortcuts/)
 
 -------------------------
 
