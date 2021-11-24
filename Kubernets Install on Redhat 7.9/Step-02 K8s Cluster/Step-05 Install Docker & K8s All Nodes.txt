@@ -1,0 +1,43 @@
+https://www.lisenet.com/2021/install-and-configure-a-multi-master-ha-kubernetes-cluster-with-kubeadm-haproxy-and-keepalived-on-centos-7/
+
+## Install Kubernetes Packages (released: 2021-10-27)
+kubelet-1.22.3-0.x86_64 
+kubeadm-1.22.3-0.x86_64 
+kubectl-1.22.3-0.x86_64 
+
+## Install Docker Packages (released: 2021-10-25)
+docker-ce-3:20.10.10-3.el7 
+docker-ce-cli-1:20.10.10-3.el7.x86_64 
+containerd.io-1.4.11-3.1.el7.x86_64 
+
+yum install deltarpm -y
+
+## Install Docker and Kubernetes
+yum install kubelet-1.22.3-0.x86_64 kubeadm-1.22.3-0.x86_64 kubectl-1.22.3-0.x86_64 \
+    docker-ce-3:20.10.10-3.el7.x86_64 docker-ce-cli-1:20.10.10-3.el7.x86_64 \
+    containerd.io-1.4.11-3.1.el7.x86_64 -y
+
+## Start and enable services.
+
+systemctl start docker && systemctl enable docker 
+systemctl start kubelet && systemctl enable kubelet 
+
+## kubelet cgroup driver: “systemd” is different from docker cgroup driver: “cgroupfs”
+
+vi /etc/sysconfig/kubelet
+
+KUBELET_EXTRA_ARGS="--cgroup-driver=cgroupfs"
+
+:wq
+
+systemctl restart kubelet
+
+docker version
+kubectl version
+
+
+echo "KUBELET_EXTRA_ARGS=--eviction-hard=memory.available<256Mi,nodefs.available<1Gi,imagefs.available<1Gi"|sudo tee /etc/kubernetes/kubelet.conf
+
+
+
+

@@ -1,0 +1,11 @@
+## Add Extras RPMS
+
+sudo subscription-manager register --auto-attach
+
+# Redhat ID & Password
+
+subscription-manager repos --enable=rhel-7-server-extras-rpms
+
+yum repolist
+
+

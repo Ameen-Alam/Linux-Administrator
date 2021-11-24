@@ -1,0 +1,16 @@
+
+firewall-cmd --get-zones
+firewall-cmd --get-active-zones
+sudo firewall-cmd --permanent --new-zone=private-k8s
+sudo firewall-cmd --zone=private-k8s --permanent --add-service=ssh
+sudo firewall-cmd --zone=private-k8s --permanent --change-interface=enp0s8
+sudo firewall-cmd --reload
+sudo firewall-cmd --zone=private-k8s --list-all
+
+
+## If you require default zone
+
+sudo firewall-cmd --set-default-zone=private-k8s
+
+
+

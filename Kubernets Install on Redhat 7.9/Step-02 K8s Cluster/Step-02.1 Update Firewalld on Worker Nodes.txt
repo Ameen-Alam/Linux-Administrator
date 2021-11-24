@@ -1,0 +1,17 @@
+## On Worker Nodes open the following ports and restart the service
+
+10250 – Kubelet API
+30000-32767 – NodePort Services
+179 – Calico networking (BGP)
+
+firewall-cmd --permanent --add-port={10250,30000-32767}/tcp
+firewall-cmd --add-masquerade --permanent && firewall-cmd --reload
+
+sudo firewall-cmd --permanent --add-port=179/tcp && firewall-cmd --reload
+
+
+
+
+echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee /etc/sysctl.d/k8s-iptables.conf
+echo "net.bridge.bridge-nf-call-ip6tables=1" | sudo tee /etc/sysctl.d/k8s-ip6tables.conf
+sudo sysctl --system

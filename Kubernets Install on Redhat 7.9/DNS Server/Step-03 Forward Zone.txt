@@ -1,0 +1,29 @@
+
+vi /var/named/dns.local.db
+
+$TTL 86400
+@   IN  SOA     ns1.dns.local. root.dns.local. (
+    2019061800 ;Serial
+    3600 ;Refresh
+    1800 ;Retry
+    604800 ;Expire
+    86400 ;Minimum TTL
+)
+
+;Name Server Information
+@      IN  NS      ns1.dns.local.
+
+;IP address of Name Server
+ns1 IN  A       192.168.56.150
+
+;Mail exchanger
+dns.local. IN  MX 10   mail.dns.local.
+
+;A - Record HostName To IP Address
+www      IN  A       192.168.56.150
+mail     IN  A       192.168.56.150
+
+;CNAME record
+ftp     IN CNAME        www.dns.local.
+
+:wq

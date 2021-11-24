@@ -1,0 +1,43 @@
+echo "net.ipv4.ip_nonlocal_bind=1" | sudo tee /etc/sysctl.d/ip_nonlocal_bind.conf
+
+sudo sysctl --system
+
+vi /etc/keepalived/keepalived.conf
+
+global_defs {
+   notification_email {
+     root@localhost
+   }
+   notification_email_from root@localhost
+   smtp_server localhost
+   smtp_connect_timeout 30
+}
+
+# Script used to check if HAProxy is running
+vrrp_script check_haproxy {
+    script "killall -0 haproxy" # check the haproxy process
+    interval 2 # every 2 seconds
+    weight 2 # add 2 points if OK
+}
+
+vrrp_instance VI_1 {
+    state MASTER # MASTER on haproxy, BACKUP on haproxy2
+    interface enp0s8 # Change interface name
+    virtual_router_id 255
+    priority 101 # 101 on haproxy, 100 on haproxy2
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass EhazK1Y2MBK37gZktTl1zrUUuBk
+    }
+    virtual_ipaddress {
+        192.168.56.120  # Virtual Ip Address
+    }
+
+    track_script {
+        check_haproxy
+    }
+}
+
+------------------------------------
+sudo systemctl start keepalived && sudo systemctl enable --now keepalived && sudo systemctl status keepalived

@@ -1,0 +1,68 @@
+https://www.youtube.com/watch?v=DF3v2P8ENEg
+https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/tree/v4.0.2/deploy
+
+yum install nfs-utils -y
+yum remove portmap nfs-utils
+
+sudo mkdir /srv/nfs/kubedata -p
+
+chmod -R 755 /srv/nfs/kubedata
+chown nfsnobody:nfsnobody /srv/nfs/kubedata
+
+systemctl enable rpcbind
+systemctl enable nfs-server
+systemctl enable nfs-lock
+systemctl enable nfs-idmap
+systemctl start rpcbind
+systemctl start nfs-server
+systemctl start nfs-lock
+systemctl start nfs-idmap
+
+#edit
+vim /etc/exports
+
+/srv/nfs/kubedata *(rw,sync,no_subtree_check,no_root_squash,no_all_squash,insecure)
+:wq
+
+systemctl restart nfs-server
+firewall-cmd --permanent --zone=public --add-service=nfs
+firewall-cmd --permanent --zone=public --add-service=mountd
+firewall-cmd --permanent --zone=public --add-service=rpc-bind
+firewall-cmd --reload
+setsebool -P nfs_export_all_rw 1
+
+sudo exportfs -rav
+sudo showmount -e localhost 
+
+####Login worker 1####
+
+yum install nfs-utils
+
+mount -t nfs 192.168.56.111:/srv/nfs/kubedata /mnt
+mount | grep kubedata
+umount /mnt
+
+####Login worker 2####
+
+yum install nfs-utils
+
+mount -t nfs 192.168.56.111:/srv/nfs/kubedata /mnt
+mount | grep kubedata
+umount /mnt
+
+####Login MAster Node####
+
+kubectl create -f rbac.yaml
+kubectl create -f class.yaml
+kubectl create -f deployment.yaml  # Edit Master IP Address
+kubectl get pods
+#################################
+for testing
+kubectl create -f 4-pvc-nfs.yaml
+ \ls /srv/nfs/kubedata
+
+####### Here is the command set default storage class. In my lab storage class is " managed-nfs-storage " ######
+
+kubectl patch storageclass managed-nfs-storage -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+
+

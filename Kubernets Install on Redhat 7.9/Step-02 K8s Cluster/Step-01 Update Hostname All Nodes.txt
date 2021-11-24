@@ -1,0 +1,26 @@
+vi /etc/hosts
+
+## Master Nodes
+192.168.56.51 k8s-master01.local
+192.168.56.52 k8s-master02.local
+192.168.56.53 k8s-master03.local
+
+## Worker Nodes
+192.168.56.56 k8s-worker01.local
+192.168.56.57 k8s-worker02.local
+192.168.56.58 k8s-worker03.local
+
+## Highly Available Proxy and Keepalived
+192.168.56.61 master-ha.local
+192.168.56.62 backup-ha.local
+192.168.56.200 control-plane-endpoint.local ## Virtual Ip Addresss
+
+## Network File System
+192.168.56.114 k8s-nfs.local
+
+192.168.56.117 k8s-client.local
+192.168.56.150 ns1.dns.local
+
+:wq
+
+hostnamectl set-hostname k8s-master01.local

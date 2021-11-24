@@ -1,0 +1,8 @@
+### kubeadm init with control plane
+
+kubeadm init --control-plane-endpoint="control-plane-endpoint.local:6443" --apiserver-advertise-address=192.168.56.51 --upload-certs --pod-network-cidr=20.20.0.0/8
+
+kubectl apply -f https://docs.projectcalico.org/archive/v3.20/manifests/calico.yaml
+------------------------------------------
+
+

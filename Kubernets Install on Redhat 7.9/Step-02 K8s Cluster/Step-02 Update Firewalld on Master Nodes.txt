@@ -1,0 +1,27 @@
+## On Master open the following ports and restart the service.
+## One interesting note here, I kept getting CoreDNS crashes like this one:
+CoreDNS crashes with error “Failed to list v1.Service: Get https://10.96.0.1:443/api/v1/***: dial tcp 10.96.0.1:443: connect: no route to host”.
+I added masquerade to firewalld and I think it helped fix the problem.
+
+8443 – Kubernetes API server
+2379,2380 – etcd server client API
+2381 – etcd metrics API
+10250 – Kubelet API
+10251 – kube-scheduler
+10252 – kube-controller-manager
+179 – Calico networking (BGP)
+____________________________________________________________________________________________________________
+
+firewall-cmd --permanent --add-port={6443/tcp,2379-2380/tcp,10250/tcp,10251/tcp,10252/tcp,10255/tcp}
+firewall-cmd --add-masquerade --permanent && firewall-cmd --reload
+
+# only if you want NodePorts exposed on control plane IP as well
+firewall-cmd --permanent --add-port=30000-32767/tcp && firewall-cmd --reload
+
+
+## for BGP communication between cluster nodes for Calico network drive.
+sudo firewall-cmd --permanent --add-port=179/tcp && firewall-cmd --reload
+
+echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee /etc/sysctl.d/k8s-iptables.conf
+echo "net.bridge.bridge-nf-call-ip6tables=1" | sudo tee /etc/sysctl.d/k8s-ip6tables.conf
+sudo sysctl --system

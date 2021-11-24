@@ -1,0 +1,25 @@
+vi pv.yaml
+--------------------------------------------------------
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: managed-nfs-storage
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany # the volume can be mounted as read-write by many nodes.
+    - ReadWriteOnce # RWO
+    - ReadOnlyMany  # the volume can be mounted as read-only by many nodes.
+    - ReadWriteOncePod 
+  nfs:
+    server: 192.168.56.114 # IP Address NFS
+    path: "/srv/nfs/kubedata/nginx-data"
+
+--------------------------------------------------------
+
+ReadWriteOncePod
+the volume can be mounted as read-write by a single Pod. Use ReadWriteOncePod access mode if you want to ensure that only one pod across whole cluster can read that PVC or write to it. This is only supported for CSI volumes and Kubernetes version 1.22+.

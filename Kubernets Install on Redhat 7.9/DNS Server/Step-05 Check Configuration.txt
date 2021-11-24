@@ -1,0 +1,8 @@
+
+
+chown named:named /var/named/dns.local.db
+chown named:named /var/named/192.168.56.db
+
+
+named-checkzone dns.local /var/named/dns.local.db
+named-checkzone 192.168.56.150 /var/named/192.168.56.db

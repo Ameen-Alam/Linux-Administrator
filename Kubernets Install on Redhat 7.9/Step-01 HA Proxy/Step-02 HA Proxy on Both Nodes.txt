@@ -1,0 +1,62 @@
+https://www.lisenet.com/2021/install-and-configure-a-multi-master-ha-kubernetes-cluster-with-kubeadm-haproxy-and-keepalived-on-centos-7/
+
+sudo yum install -y haproxy keepalived psmisc
+
+sudo firewall-cmd --permanent --add-port={6443/tcp,8080/tcp}
+sudo firewall-cmd --permanent --add-rich-rule='rule protocol value="vrrp" accept'
+sudo firewall-cmd --reload
+
+sudo semanage port -a -t http_cache_port_t 6443 -p tcp
+
+vi /etc/sysctl.conf
+
+net.ipv4.ip_nonlocal_bind=1
+:wq
+
+sysctl -p
+
+sudo systemctl enable --now haproxy && sudo systemctl restart haproxy && sudo systemctl status haproxy
+
+vi /etc/haproxy/haproxy.cfg # Remove all content in file and past it.
+
+global
+  log /dev/log  local0
+  log /dev/log  local1 notice
+  stats socket /var/lib/haproxy/stats level admin
+  chroot /var/lib/haproxy
+  user haproxy
+  group haproxy
+  daemon
+
+defaults
+  log global
+  mode  http
+  option  httplog
+  option  dontlognull
+        timeout connect 5000
+        timeout client 50000
+        timeout server 50000
+
+frontend kubernetes
+    bind 192.168.56.120:6443 # Virtual Ip Address
+    option tcplog
+    mode tcp
+    default_backend kubernetes-master-nodes
+
+backend kubernetes-master-nodes
+    mode tcp
+    balance roundrobin
+    option tcp-check
+    server k8s-master01.local 192.168.56.111:6443 check fall 3 rise 2
+    server k8s-master02.local 192.168.56.110:6443 check fall 3 rise 2
+    server k8s-master03.local 192.168.56.109:6443 check fall 3 rise 2
+
+listen stats 192.168.56.120:8080 # Virtual Ip Address
+    mode http
+    stats enable
+    stats uri /
+    stats realm HAProxy\ Statistics
+    stats auth admin:haproxy
+:wq
+
+sudo systemctl restart haproxy && sudo systemctl status haproxy

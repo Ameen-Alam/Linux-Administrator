@@ -1,0 +1,18 @@
+vi pvc.yaml
+
+------------------------------------------------
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim
+spec:
+  storageClassName: managed-nfs-storage
+  accessModes:
+    - ReadWriteMany # the volume can be mounted as read-write by many nodes
+    - ReadWriteOnce # RWO
+    - ReadOnlyMany  # the volume can be mounted as read-only by many nodes.
+    - ReadWriteOncePod
+  resources:
+    requests:
+      storage: 1Gi
+-------------------------------------

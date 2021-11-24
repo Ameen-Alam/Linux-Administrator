@@ -1,0 +1,27 @@
+
+
+vi /var/named/192.168.56.db
+
+$TTL 86400
+@   IN  SOA     ns1.dns.local. root.dns.local. (
+    2019061800 ;Serial
+    3600 ;Refresh
+    1800 ;Retry
+    604800 ;Expire
+    86400 ;Minimum TTL
+)
+
+;Name Server Information
+@ IN NS ns1.dns.local.
+ns1     IN      A       192.168.56.150
+
+;Reverse lookup for Name Server
+150        IN  PTR     ns1.dns.local.
+
+;PTR Record IP address to HostName
+150      IN  PTR      www..dns.local.
+150      IN  PTR      mail.dns.local.
+
+:wq
+
+

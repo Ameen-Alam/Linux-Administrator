@@ -1,0 +1,25 @@
+## Disable SElinux
+ 
+By Disabling the SElinux all containers can easily access host filesystem.
+
+vi /etc/selinux/config
+
+SELINUX=disabled
+
+:wq
+
+## Disable SWAP
+
+By disabling the SWAP kubelet will work perfectly.
+
+vi /etc/fstab
+
+#/dev/mapper/rhel-swap   swap 
+
+:wq
+
+reboot
+
+## Check seliux and swap status
+
+free -mh && getenforce
