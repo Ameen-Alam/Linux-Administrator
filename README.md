@@ -98,3 +98,11 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
     $ sudo mount -o rw,nouuid /dev/sda3  /mnt
 
     $ sudo xfs_admin -U generate /dev/sda3
+
+3. How do I find all files containing specific text on Linux?
+
+find / -type f -exec grep -H 'text-to-find-here' {} \;
+
+
+4. How to fix SSH Permission denied 
+sudo nano /etc/ssh/sshd_config
