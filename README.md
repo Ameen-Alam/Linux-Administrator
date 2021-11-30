@@ -106,3 +106,6 @@ find / -type f -exec grep -H 'text-to-find-here' {} \;
 
 4. How to fix SSH Permission denied 
 sudo nano /etc/ssh/sshd_config
+
+5. VIM add sudo rights 
+:w !sudo tee %
