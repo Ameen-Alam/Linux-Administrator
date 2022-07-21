@@ -109,3 +109,7 @@ sudo nano /etc/ssh/sshd_config
 
 5. VIM add sudo rights 
 :w !sudo tee %
+
+6. calculate the CPU usage using vmstat
+echo "CPU Usage: "$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]"%"
+
