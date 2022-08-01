@@ -113,3 +113,7 @@ sudo nano /etc/ssh/sshd_config
 6. calculate the CPU usage using vmstat
 echo "CPU Usage: "$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]"%"
 
+7. Forgot Linux Password on WSL?
+
+ubuntu config --default-user root
+
