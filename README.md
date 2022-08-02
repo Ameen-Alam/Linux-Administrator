@@ -79,7 +79,13 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 ### Documentation
 
-1. [Syslog and Klog](https://annvix.com/syslog_and_klog#:~:text=syslogd%20is%20a%20system%20logging,via%20the%20%2Fetc%2Fsyslog)
+1. [34 Basic Linux Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
+
+2. [How to Create Users in Linux](https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/)
+
+3. [userdel command in Linux with Examples](https://www.geeksforgeeks.org/userdel-command-in-linux-with-examples/)
+
+2. [Syslog and Klog](https://annvix.com/syslog_and_klog#:~:text=syslogd%20is%20a%20system%20logging,via%20the%20%2Fetc%2Fsyslog)
 
 2. [The magic behind configure, make, make install](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install)
 
