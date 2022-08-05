@@ -91,6 +91,8 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 6. [Linux tr Command with Examples](https://phoenixnap.com/kb/linux-tr)
 
+7. [What is SELinux?](https://www.redhat.com/en/topics/linux/what-is-selinux)
+
 -------------------------
 
 ### Questions
