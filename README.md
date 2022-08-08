@@ -94,6 +94,10 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 7. [What is SELinux?](https://www.redhat.com/en/topics/linux/what-is-selinux)
 
 8. [In Linux, what do all the values in the "top" command mean?](https://github.com/torvalds/linux/blob/3950e975431bc914f7e81b8f2a2dbdf2064acb0f/fs/proc/array.c#L129-L143)
+
+9. [How to Create a New Sudo User & Manage Sudo Access on Ubuntu 20.04](https://jumpcloud.com/blog/how-to-create-a-new-sudo-user-manage-sudo-access-on-ubuntu-20-04)
+
+
 -------------------------
 
 ### Questions
