@@ -97,6 +97,9 @@ Linux is a tried-and-true, open-source operating system released in 1991 for com
 
 9. [How to Create a New Sudo User & Manage Sudo Access on Ubuntu 20.04](https://jumpcloud.com/blog/how-to-create-a-new-sudo-user-manage-sudo-access-on-ubuntu-20-04)
 
+10. [Vim Keyboard Shortcuts](https://scaron.info/blog/vim-keyboard-shortcuts.html)
+
+11. [Vim Cheat Sheet](https://vim.rtorr.com/)
 
 -------------------------
 
