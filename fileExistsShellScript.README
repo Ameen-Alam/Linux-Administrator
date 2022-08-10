@@ -1,0 +1,48 @@
+You're missing a required space between the bracket and -e:
+
+
+#!/bin/bash
+if [ -e x.txt ]
+then
+    echo "ok"
+else
+    echo "nok"
+fi
+
+
+Here is an alternative method using ls:
+
+(ls x.txt && echo yes) || echo no
+
+If you want to hide any output from ls so you only see yes or no, redirect stdout and stderr to /dev/null:
+
+(ls x.txt >> /dev/null 2>&1 && echo yes) || echo no
+
+
+man test has the following to say:
+
+-b FILE
+
+       FILE exists and is block special
+
+-c FILE
+
+       FILE exists and is character special
+
+-d FILE
+
+       FILE exists and is a directory
+
+-e FILE
+
+       FILE exists
+
+-f FILE
+
+       FILE exists and is a regular file
+
+...
+
+-h FILE
+
+       FILE exists and is a symbolic link (same as -L)
