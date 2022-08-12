@@ -135,3 +135,6 @@ echo "CPU Usage: "$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]"%"
 
 ubuntu config --default-user root
 
+8. Bash help declear
+bash -c help
+
