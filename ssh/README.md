@@ -38,6 +38,10 @@ The following syntax specifies the 4096 of bits in the RSA key to creation (defa
 
 ``` $ ssh-keygen -t rsa -b 4096 -f ~/.ssh/vps-cloud.web-server.key -C "My web-server key" ```
 
+Silent 
+
+``` ssh-keygen -q -t rsa -C "ameenalam" -N '' <<< $'\ny' > /dev/null 2>&1 ```
+
 Where,
 
 
