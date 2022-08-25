@@ -138,3 +138,11 @@ ubuntu config --default-user root
 8. Bash help declear
 bash -c help
 
+9. Extend a Linux file system after resizing a volume
+
+sudo growpart /dev/nvme0n1 1
+
+sudo resize2fs /dev/nvme0n1p1
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
+
