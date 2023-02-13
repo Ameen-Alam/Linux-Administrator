@@ -146,3 +146,5 @@ sudo resize2fs /dev/nvme0n1p1
 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
 
+
+```chroot /host```
