@@ -147,4 +147,10 @@ sudo resize2fs /dev/nvme0n1p1
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
 
 
+https://aws.amazon.com/premiumsupport/knowledge-center/ebs-volume-size-increase/
+
+No space left on the block device
+
+``` $ sudo mount -o size=10M,rw,nodev,nosuid -t tmpfs tmpfs /tmp ```
+
 ```chroot /host```
